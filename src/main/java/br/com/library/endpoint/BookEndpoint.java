@@ -112,11 +112,11 @@ public class BookEndpoint {
     }
 
     private void verifyifbookexistsbyId(Long id) {
-        if (bookDAO.findById(id).isPresent())
+        if (bookDAO.findById(id).isEmpty())
             throw new ResourceNotFoundException("Book not found for ID: "+id);
     }
-    private void verifyifbookexistsbyName(String name) {
-        if (!bookDAO.findByNameIgnoreCaseContaining(name).isEmpty())
-            throw new ResourceNotFoundException("Book not found");
-    }
+//    private void verifyifbookexistsbyName(String name) {
+//        if (!bookDAO.findByNameIgnoreCaseContaining(name).isEmpty())
+//            throw new ResourceNotFoundException("Book not found");
+//    }
 }
