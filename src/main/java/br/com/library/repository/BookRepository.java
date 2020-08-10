@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface BookRepository extends PagingAndSortingRepository<Book, Long> {
     List<Book> findByNameIgnoreCaseContaining(String name);
-    List<Book> findByAuthorIgnoreCaseContaining(String author, Pageable pageable);
-    List<Book> findByGenreIgnoreCaseContaining(String genre, Pageable pageable);
+    List<Book> findByAuthorIgnoreCaseContaining(String author);
+    List<Book> findByGenreIgnoreCaseContaining(String genre);
 }

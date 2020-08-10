@@ -69,8 +69,8 @@ public class BookEndpoint {
                             "Default sort order is ascending. " +
                             "Multiple sort criteria are supported.")
     })
-    public ResponseEntity<?> listBooksByAuthor (@PathVariable("author") String author, Pageable pageable) {
-        return new ResponseEntity<>(bookDAO.findByAuthorIgnoreCaseContaining(author, pageable), HttpStatus.OK);
+    public ResponseEntity<?> listBooksByAuthor (@PathVariable("author") String author) {
+        return new ResponseEntity<>(bookDAO.findByAuthorIgnoreCaseContaining(author), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Return all books of a given genre", response = Book.class)
@@ -85,8 +85,8 @@ public class BookEndpoint {
                             "Default sort order is ascending. " +
                             "Multiple sort criteria are supported.")
     })
-    public ResponseEntity<?> listBooksByGenre (@PathVariable("genre") String genre, Pageable pageable) {
-        return new ResponseEntity<>(bookDAO.findByGenreIgnoreCaseContaining(genre, pageable), HttpStatus.OK);
+    public ResponseEntity<?> listBooksByGenre (@PathVariable("genre") String genre) {
+        return new ResponseEntity<>(bookDAO.findByGenreIgnoreCaseContaining(genre), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Save given book", response = Book.class, produces="application/json", consumes="application/json")
