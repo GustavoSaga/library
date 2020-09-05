@@ -1,0 +1,30 @@
+server:
+  error:
+    include-stacktrace: on_trace_param
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/book?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: false
+#    show-sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+info:
+  app: Library CRUD
+  github: https://github.com/GustavoSaga/library
