@@ -19,7 +19,7 @@ Web API developed using:
     
 ## Run With Docker
 
-    docker-compose up
+    docker-compose up --build
 
 ## URL's
 
